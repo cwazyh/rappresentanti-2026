@@ -384,10 +384,6 @@ section { padding-block: var(--space-section); }
   transition: opacity var(--dur-ui) ease, transform var(--dur-ui) var(--ease-spring);
 }
 .cta-badge.show { opacity: 1; transform: scale(1); }
-.cta-note {
-  margin-top: 1.25rem; font-size: 0.95rem; font-weight: 500;
-  color: var(--text-secondary);
-}
 
 /* Ondicina al click sul CTA */
 .ripple {

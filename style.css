@@ -81,9 +81,12 @@ section { padding-block: var(--space-section); }
 .nav-brand {
   font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em;
   color: var(--text); text-decoration: none; margin-right: auto;
+  white-space: nowrap; min-width: 0;      /* mai a capo, mai overflow */
+  overflow: hidden; text-overflow: ellipsis;
 }
 .nav-year { color: var(--text-secondary); font-weight: 400; }
-.nav-links { display: flex; gap: 0.25rem; }
+.brand-short { display: none; }
+.nav-links { display: flex; gap: 0.25rem; flex-shrink: 0; }
 .nav-links a {
   color: var(--text-secondary); text-decoration: none;
   font-size: 0.85rem; font-weight: 500;
@@ -98,6 +101,7 @@ section { padding-block: var(--space-section); }
 .theme-toggle {
   display: inline-flex; align-items: center; gap: 0.5rem;
   min-width: 44px; min-height: 44px; justify-content: center;
+  flex-shrink: 0;                           /* sempre visibile, mai tagliato */
   background: none; border: none; cursor: pointer; color: var(--text-secondary);
 }
 .theme-toggle-track {
@@ -411,6 +415,16 @@ section { padding-block: var(--space-section); }
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* ===== Responsive: navbar su smartphone ===== */
+@media (max-width: 719px) {
+  .nav-inner { height: 48px; gap: 0.5rem; }
+  .brand-full { display: none; }
+  .brand-short { display: inline; }
+  /* La pagina è a scorrimento unico e l'hero ha già i pulsanti:
+     i link di navigazione non servono e creerebbero overflow */
+  .nav-links { display: none; }
+}
 
 /* ===== Reduced motion & trasparenza ===== */
 @media (prefers-reduced-motion: reduce) {

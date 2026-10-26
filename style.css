@@ -89,6 +89,19 @@ section { padding-block: var(--space-section); }
 }
 .nav-year { color: var(--text-secondary); font-weight: 400; }
 .brand-short { display: none; }
+
+/* Logo: versione scura nel tema chiaro, bianca in quello scuro */
+.logo-light { display: block; }
+.logo-dark { display: none; }
+[data-theme="dark"] .logo-light { display: none; }
+[data-theme="dark"] .logo-dark { display: block; }
+
+.nav-logo { height: 24px; width: auto; flex-shrink: 0; align-self: center; }
+.nav-brand { display: flex; align-items: center; gap: 0.5rem; }
+
+.hero-logo { height: 88px; width: auto; margin: 1.25rem auto 0; }
+.footer-logo { height: 51px; width: auto; margin: 0 auto 0.75rem; }
+
 .nav-links { display: flex; gap: 0.25rem; flex-shrink: 0; }
 .nav-links a {
   color: var(--text-secondary); text-decoration: none;
@@ -210,11 +223,31 @@ section { padding-block: var(--space-section); }
   text-align: center;
   padding: 1.5rem;
 }
-.ph-hero { margin-block: 2.5rem; aspect-ratio: 21 / 9; }
 .ph-icon { font-size: clamp(2rem, 5vw, 3rem); filter: grayscale(0.2); }
 .ph-label { display: flex; flex-direction: column; gap: 0.25rem; }
 .ph-label strong { font-size: 1rem; letter-spacing: -0.01em; color: var(--text); }
 .ph-label span { font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); }
+
+/* Card con le foto vere delle sedi */
+.sedi-card {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: var(--chip-bg);
+}
+.sedi-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* stessa proporzione dei placeholder ispirazione sotto */
+  object-fit: cover;
+  display: block;
+}
+.sedi-caption {
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-weight: 600; font-size: 0.98rem; letter-spacing: -0.01em;
+}
 
 .grid-sedi { margin-top: 0; }
 .grid-sedi .ph { aspect-ratio: 4 / 3; }
@@ -430,7 +463,6 @@ section { padding-block: var(--space-section); }
   .cta-sub, .valorizziamo, .slogan { font-size: 0.98rem; }
 
   /* Placeholder: più compatti */
-  .ph-hero { aspect-ratio: 16 / 10; padding: 1rem; }
   .ph { padding: 1rem; }
 }
 

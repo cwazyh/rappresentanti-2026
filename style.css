@@ -46,7 +46,7 @@
 /* ===== Reset & base ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; overflow-x: hidden; }
 
 body {
   font: 100%/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
@@ -57,6 +57,9 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 300ms ease, color 300ms ease;
   overflow-x: hidden;
+  max-width: 100vw;                 /* nessun overflow orizzontale */
+  overflow-wrap: break-word;        /* le parole lunghe spezzano invece di uscire */
+  -webkit-text-size-adjust: 100%;   /* iOS non ingrandisce i testi a suo piacimento */
 }
 
 .container { width: min(1120px, 100% - clamp(2rem, 8vw, 6rem)); margin-inline: auto; }
@@ -416,7 +419,7 @@ section { padding-block: var(--space-section); }
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ===== Responsive: navbar su smartphone ===== */
+/* ===== Responsive: navbar + layout su smartphone ===== */
 @media (max-width: 719px) {
   .nav-inner { height: 48px; gap: 0.5rem; }
   .brand-full { display: none; }
@@ -424,6 +427,19 @@ section { padding-block: var(--space-section); }
   /* La pagina è a scorrimento unico e l'hero ha già i pulsanti:
      i link di navigazione non servono e creerebbero overflow */
   .nav-links { display: none; }
+
+  /* Bottoni: mai più larghi dello schermo, si impilano se serve */
+  .hero-actions { gap: 0.6rem; margin-top: 2rem; }
+  .btn { max-width: 100%; white-space: normal; text-align: center; padding-inline: 1.25rem; }
+  .btn-big { padding-inline: 1.5rem; font-size: 1.05rem; }
+
+  /* Testi lunghi: restringono il font invece di uscire */
+  .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.04em; }
+  .cta-sub, .valorizziamo, .slogan { font-size: 0.98rem; }
+
+  /* Placeholder: più compatti */
+  .ph-hero { aspect-ratio: 16 / 10; padding: 1rem; }
+  .ph { padding: 1rem; }
 }
 
 /* ===== Reduced motion & trasparenza ===== */

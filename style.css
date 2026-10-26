@@ -183,7 +183,48 @@ section { padding-block: var(--space-section); }
 }
 .chip-dot { width: 8px; height: 8px; border-radius: 50%; background: #30D158; }
 
+.chips-caption {
+  margin-top: 1rem;
+  font-size: 0.9rem; color: var(--text-secondary); letter-spacing: -0.005em;
+}
+
 .hero-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+
+/* ===== Placeholder immagini ===== */
+.ph {
+  margin: 0;
+  display: grid; place-items: center; gap: 0.75rem;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  border: 2px dashed var(--border);
+  background:
+    repeating-linear-gradient(45deg, transparent 0 14px, var(--chip-bg) 14px 28px),
+    var(--chip-bg);
+  text-align: center;
+  padding: 1.5rem;
+}
+.ph-hero { margin-block: 2.5rem; aspect-ratio: 21 / 9; }
+.ph-icon { font-size: clamp(2rem, 5vw, 3rem); filter: grayscale(0.2); }
+.ph-label { display: flex; flex-direction: column; gap: 0.25rem; }
+.ph-label strong { font-size: 1rem; letter-spacing: -0.01em; color: var(--text); }
+.ph-label span { font-size: 0.82rem; line-height: 1.45; color: var(--text-secondary); }
+
+.grid-sedi { margin-top: 0; }
+.grid-sedi .ph { aspect-ratio: 4 / 3; }
+.ph-alt { border-color: rgba(120, 90, 255, 0.35); }
+
+.inspo {
+  margin-top: 1.75rem; padding: 1.1rem 1.35rem;
+  border-radius: var(--radius-card);
+  background: var(--chip-bg); border: 1px solid var(--border);
+}
+.inspo-title { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.5rem; }
+.inspo-tag {
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--accent); background: rgba(0, 113, 227, 0.12);
+  padding: 0.15rem 0.5rem; border-radius: 999px;
+}
+.inspo-text { margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary); }
 
 /* ===== Bottoni ===== */
 .btn {
@@ -241,9 +282,39 @@ section { padding-block: var(--space-section); }
 .card:active { transform: scale(0.98); transition-duration: 100ms; }
 .card h3 {
   font-size: 1.25rem; letter-spacing: -0.015em; font-weight: 600;
-  margin-block: 1rem 0.5rem;
+  margin-block: 0.65rem 0.5rem;
 }
-.card p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.55; }
+.card-kicker {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--accent); margin-top: 1rem;
+}
+.card p, .card-list { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.55; }
+
+.card-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.card-list li { position: relative; padding-left: 1.1rem; }
+.card-list li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.card-list strong { color: var(--text); font-weight: 600; }
+
+.valorizziamo {
+  margin-top: clamp(2rem, 4vw, 3rem); text-align: center;
+  font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text-secondary);
+}
+.valorizziamo strong { color: var(--text); }
+.slogan {
+  margin-top: 1rem; text-align: center;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 600; letter-spacing: -0.015em;
+}
+.slogan em { font-style: normal; color: var(--accent); }
+
+/* ===== Sezione domande compatta ===== */
+.section-compact { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.section-sub-tight { margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+.section-compact .accordion { gap: 0.5rem; }
+.section-compact .acc-header { min-height: 48px; padding: 0.65rem 1rem; font-size: 0.95rem; }
+.section-compact .acc-panel-inner p { padding: 0 1rem 0.8rem; font-size: 0.9rem; line-height: 1.5; }
 
 .card-icon {
   width: 52px; height: 52px; border-radius: 14px;
@@ -310,6 +381,10 @@ section { padding-block: var(--space-section); }
   transition: opacity var(--dur-ui) ease, transform var(--dur-ui) var(--ease-spring);
 }
 .cta-badge.show { opacity: 1; transform: scale(1); }
+.cta-note {
+  margin-top: 1.25rem; font-size: 0.95rem; font-weight: 500;
+  color: var(--text-secondary);
+}
 
 /* Ondicina al click sul CTA */
 .ripple {

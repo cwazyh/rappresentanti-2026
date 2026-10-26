@@ -254,6 +254,14 @@ section { padding-block: var(--space-section); }
 .grid-sedi .ph { aspect-ratio: 4 / 3; }
 .inspo-grid { margin-top: 2rem; }   /* distaccata dal testo, stesso ritmo della griglia sopra */
 
+/* Griglia ispirazione: 2 foto affiancate (metà e metà), rettangolo largo */
+.grid.grid-inspo { grid-template-columns: repeat(2, 1fr); }
+.grid-inspo .sedi-card img { aspect-ratio: 16 / 9; }
+@media (max-width: 719px) {
+  .grid.grid-inspo { grid-template-columns: 1fr; }
+  .grid-inspo .sedi-card img { aspect-ratio: 16 / 10; }
+}
+
 .inspo {
   margin-top: 1.75rem; padding: 1.1rem 1.35rem;
   border-radius: var(--radius-card);

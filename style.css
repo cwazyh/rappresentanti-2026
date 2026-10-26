@@ -218,7 +218,7 @@ section { padding-block: var(--space-section); }
 
 .grid-sedi { margin-top: 0; }
 .grid-sedi .ph { aspect-ratio: 4 / 3; }
-.ph-alt { border-color: rgba(120, 90, 255, 0.35); }
+.inspo-grid { margin-top: 2rem; }   /* distaccata dal testo, stesso ritmo della griglia sopra */
 
 .inspo {
   margin-top: 1.75rem; padding: 1.1rem 1.35rem;
@@ -226,11 +226,6 @@ section { padding-block: var(--space-section); }
   background: var(--chip-bg); border: 1px solid var(--border);
 }
 .inspo-title { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.5rem; }
-.inspo-tag {
-  font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-  color: var(--accent); background: rgba(0, 113, 227, 0.12);
-  padding: 0.15rem 0.5rem; border-radius: 999px;
-}
 .inspo-text { margin-top: 0.4rem; font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary); }
 
 /* ===== Bottoni ===== */

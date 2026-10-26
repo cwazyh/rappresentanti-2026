@@ -350,7 +350,8 @@ section { padding-block: var(--space-section); }
   transition: background-color var(--dur-ui) ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  .acc-header:hover { background: var(--chip-bg); }
+  /* L'ombreggiatura copre l'intera voce (intestazione + risposta aperta) */
+  .acc-item:hover { background: var(--chip-bg); }
 }
 .acc-header:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
 .acc-chevron {

@@ -93,7 +93,7 @@
   });
 
   voteBtn.addEventListener("click", () => {
-    badge.textContent = "Grazie! Domani si decide insieme. 🗳️";
+    badge.textContent = "Grazie, e fatevi sentire anche voi, Russell e Guarini!";
     badge.classList.add("show");
   });
 })();

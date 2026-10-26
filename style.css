@@ -238,10 +238,11 @@ section { padding-block: var(--space-section); }
   background: var(--chip-bg);
 }
 .sedi-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;      /* stessa proporzione dei placeholder ispirazione sotto */
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: auto;          /* sovrascrive l'attributo height: permette a aspect-ratio di governare */
+  aspect-ratio: 4 / 3;   /* rettangolo uniforme per tutte e 3 le sedi */
+  object-fit: cover;     /* ritaglia il focale, nessun problema */
 }
 .sedi-caption {
   padding: 0.85rem 1rem;
